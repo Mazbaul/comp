@@ -29,9 +29,11 @@ Add the following to your `providers` array in `config/app.php`:
 Use it like any `Validator` rule:
 
 ```php
-$rules = [
-    '<field1>' => 'composite_unique:<table>,<field2><field3>,...',
-];
+
+$validator = Validator::make($request->all(), [
+      
+      "<field1>" =>"required|max:30|composite_unique:<table>,<field2><field3>,...",
+    ]);
 ```
 
 See the [Validation documentation](http://laravel.com/docs/validation) of Laravel.
@@ -45,10 +47,11 @@ You can also specify a row id to ignore (useful to solve unique constraint when 
 This will ignore row with id 2
 
 ```php
-$rules = [
-    'first_name' => "required|composite_unique:users,last_name,ignore-$id",
-    'last_name' => 'required',
-];
+
+$validator = Validator::make($request->all(), [
+      
+      "<field1>" =>"required|max:30|composite_unique:<table>,<field2><field3>,...,ignore-$id",
+    ]);
 ```
 
 # License
