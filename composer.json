@@ -1,0 +1,13 @@
+{
+    "name": "anik/comp",
+    "description": "A Package For Composite Key Validation",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Anik\\Comp\\": "src/"
+        }
+    },
+}
