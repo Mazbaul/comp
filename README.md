@@ -30,23 +30,13 @@ Use it like any `Validator` rule:
 
 ```php
 $rules = [
-    '<field1>' => 'composite_unique:<table>,<field2>[,<field3>,...,<ignore_rowid>]',
+    '<field1>' => 'composite_unique:<table>,<field2><field3>,...',
 ];
 ```
 
 See the [Validation documentation](http://laravel.com/docs/validation) of Laravel.
 
-### Specify different column names in the database
 
-If your input field names are different from the corresponding database columns,
-you can specify the column names explicitly.
-
-e.g. your input contains a field 'last_name', but the column in your database is called 'sur_name':
-```php
-$rules = [
-    'first_name' => 'composite_unique:users, middle_name, last_name = sur_name',
-];
-```
 
 ### Ignore existing row (useful when updating)
 
