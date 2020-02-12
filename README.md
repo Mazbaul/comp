@@ -20,7 +20,7 @@ Add the following to your `providers` array in `config/app.php`:
 'providers' => [
     // ...
 
-    Anik\Comp\CompServiceProvider::class,
+    Mazbaul\Comp\CompServiceProvider::class,
 ],
 ```
 

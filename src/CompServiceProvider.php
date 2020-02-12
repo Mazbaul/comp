@@ -1,6 +1,6 @@
 <?php
 
-namespace Anik\Comp;
+namespace Mazbaul\Comp;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Session;
