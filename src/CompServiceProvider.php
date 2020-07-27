@@ -20,7 +20,7 @@ class CompServiceProvider extends ServiceProvider
                    //dd($ign);exit;
                    $ingid ='';
                    if($ign[0] == 'ignore'){
-                     $ingid = $ign[1];
+                     $ingid = $ign[2];
                      array_pop($parameters);
                    }
 
@@ -38,13 +38,13 @@ class CompServiceProvider extends ServiceProvider
                   $result = \DB::table( $table )
                                ->select( \DB::raw( 1 ) )
                                ->where( $fields )
-                               ->when(!empty($ingid), function ($query) use($ingid){
-                                      return $query->where('stl_id','!=',$ingid);
+                               ->when(!empty($ingid), function ($query) use($ingid,$ign){
+                                      return $query->where($ign[1],'!=',$ingid);
                                  })
                                ->first();
 
                   return empty( $result );
-              },'This field has composite key validation');
+              },'This data already exists ');
       }
 
     /**
