@@ -32,7 +32,7 @@ Use it like any `Validator` rule:
 
 $validator = Validator::make($request->all(), [
       
-      "<field1>" =>"required|max:30|composite_unique:<table>,<field2><field3>,...",
+      "<field1>" =>'required|composite_unique:<table>,<field1>,<field2>',
     ]);
 ```
 
@@ -50,7 +50,7 @@ This will ignore row with id 2
 
 $validator = Validator::make($request->all(), [
       
-      "<field1>" =>"required|max:30|composite_unique:<table>,<field2><field3>,...,ignore-$id",
+      "<field1>" =>'required|composite_unique:<table>,<field1>,<field2>,ignore-primaryKey-'.$id,
     ]);
 ```
 
