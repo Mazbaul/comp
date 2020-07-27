@@ -50,7 +50,7 @@ This will ignore row with id 2
 
 $validator = Validator::make($request->all(), [
       
-      "<field1>" =>'required|composite_unique:<table>,<field1>,<field2>,ignore-primaryKey-'.$id,
+      "<field1>" =>'required|composite_unique:<table>,<field1>,<field2>,ignore-<primaryKey>-'.$id,
     ]);
 ```
 
